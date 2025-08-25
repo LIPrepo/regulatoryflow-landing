@@ -1,0 +1,2409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RegulatoryFlow - Transform Clinical Trial Documentation | Evidence Matters</title>
+   
+    <!-- Essential SEO Meta Tags -->
+    <meta name="description" content="Cut protocol development time by 70-90% with RegulatoryFlow's AI-powered regulatory documentation platform. Start with TFL automation today.">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="RegulatoryFlow - Transform Clinical Trial Documentation">
+    <meta property="og:description" content="AI-powered regulatory documentation that delivers near-zero-error accuracy. 2-20x faster TFL processing.">
+    <meta property="og:image" content="https://regulatoryflow.evidencematters.com/og-image.jpg">
+    <meta property="og:url" content="https://regulatoryflow.evidencematters.com">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="RegulatoryFlow - Transform Clinical Trial Documentation">
+    <meta name="twitter:description" content="AI-powered regulatory documentation. 2-20x faster TFL processing.">
+    <meta name="twitter:image" content="https://regulatoryflow.evidencematters.com/og-image.jpg">
+    <link rel="canonical" href="https://regulatoryflow.evidencematters.com">
+   
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+   
+    <style>
+        /* Font Import - Better Typography */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+       
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+       
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: #ffffff;
+        }
+       
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+       
+        /* Desktop/Mobile Content Visibility */
+        .desktop-only { display: block; }
+        .mobile-only { display: none !important; }
+        .mobile-label { display: none; }
+       
+        /* Navigation - Enhanced */
+        nav {
+            background: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+       
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+       
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .nav-links.mobile-active {
+            display: block !important;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            right: 0;
+            background: white;
+            flex-direction: column;
+            padding: 1rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            z-index: 999;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        
+        .nav-links.mobile-active a {
+            display: block;
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .nav-links.mobile-active strong {
+            display: block;
+            padding: 0.75rem 1rem;
+            border-bottom: 2px solid #5a9e6f;
+            margin-bottom: 0.5rem;
+        }
+       
+        .nav-links a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+       
+        .nav-links a:hover {
+            color: #5a9e6f;
+        }
+        
+        /* Mobile-specific menu labels */
+        .mobile-label {
+            display: none;
+        }
+       
+        .nav-cta {
+            background: #5a9e6f;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+       
+        .nav-cta:hover {
+            background: #4a8c5f;
+        }
+       
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #2c3e50;
+            transition: transform 0.3s;
+        }
+        
+        .mobile-menu-toggle.active {
+            transform: rotate(90deg);
+        }
+       
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #4a7c59 0%, #2d5a3d 100%);
+            color: white;
+            padding: 7rem 0 5rem;
+            text-align: center;
+        }
+       
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 2.5rem;
+            line-height: 1.3;
+        }
+       
+        .hero .subheadline {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+        
+        .hero .subheadline:last-of-type {
+            margin-bottom: 3rem;
+        }
+       
+        .trust-bar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+            margin: 3rem 0 3.5rem;
+            flex-wrap: wrap;
+            padding: 2rem 0;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+       
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255,255,255,0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+       
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+       
+        /* Button Styles */
+        .btn-primary {
+            background: #5a9e6f;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            display: inline-flex;
+            min-height: 48px;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            cursor: pointer;
+        }
+       
+        .hero .btn-primary {
+            background: white;
+            color: #5a9e6f;
+        }
+       
+        .hero .btn-primary:hover {
+            background: #f8f8f8;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+       
+        .btn-primary:hover {
+            background: #4a8c5f;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+       
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            padding: 1rem 2rem;
+            border: 2px solid white;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: background 0.3s;
+            min-height: 48px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+       
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.1);
+        }
+       
+        .btn-outline {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+            padding: 1rem;
+            min-height: 50px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: all 0.3s;
+            width: 100%;
+        }
+       
+        .btn-outline:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-2px);
+        }
+       
+        /* Section Styles */
+        .section {
+            padding: 4rem 0;
+        }
+       
+        .section-alt {
+            background: #f8f9fa;
+        }
+       
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+       
+        .section-subtitle {
+            font-size: 1.25rem;
+            text-align: center;
+            color: #5a6c7d;
+            margin-bottom: 3rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+       
+        /* Two Column Layout - Enhanced */
+        .two-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 3rem;
+            max-width: 1100px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+       
+        .column-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 1px solid #e5e7eb;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .column-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #5a9e6f 0%, #4a8c5f 100%);
+        }
+       
+        .column-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+            border-color: #5a9e6f;
+        }
+       
+        .column-card h4 {
+            font-size: 1.6rem;
+            color: #5a9e6f;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+       
+        .column-card h5 {
+            font-size: 1.15rem;
+            color: #5a6c7d;
+            margin-bottom: 1.75rem;
+            font-weight: 500;
+        }
+       
+        .column-card ul {
+            list-style: none;
+            padding: 0;
+        }
+       
+        .column-card li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+       
+        .column-card li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: bold;
+        }
+       
+        .quote-box {
+            background: #f0f8f4;
+            padding: 1.5rem;
+            border-left: 4px solid #5a9e6f;
+            margin: 1.5rem 0;
+            font-style: italic;
+            color: #5a6c7d;
+        }
+       
+        /* Pricing Section - Fixed */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin: 3rem auto;
+            max-width: 900px;
+        }
+       
+        .pricing-card {
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+       
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            border-color: #5a9e6f;
+        }
+       
+        .pricing-card h4 {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+       
+        .pricing-card .availability {
+            color: #10b981;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+       
+        .pricing-card .price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #5a9e6f;
+            margin: 1rem 0;
+        }
+       
+        .pricing-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0;
+            text-align: left;
+        }
+       
+        .pricing-card li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+       
+        .pricing-card .minimum {
+            color: #5a6c7d;
+            font-style: italic;
+            margin: 1rem 0;
+        }
+        
+        .pricing-card .btn-primary {
+            width: 100%;
+            margin-top: 1rem;
+        }
+       
+        .comparison-box {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            margin: 2rem auto;
+            max-width: 900px;
+        }
+       
+        .comparison-box h4 {
+            color: #5a9e6f;
+            margin-bottom: 1rem;
+        }
+       
+        .pilot-box {
+            background: #f0f8f4;
+            border: 2px solid #0c5460;
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            margin: 2rem auto;
+            max-width: 900px;
+        }
+       
+        /* ROI Table */
+        .roi-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+       
+        .roi-table thead {
+            background: #0066cc;
+            color: white;
+        }
+       
+        .roi-table th {
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+       
+        .roi-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+       
+        .roi-table tbody tr:hover {
+            background: #f8f9fa;
+        }
+       
+        /* Mobile ROI Cards */
+        .roi-mobile-cards {
+            display: none;
+        }
+       
+        .roi-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+       
+        .roi-card h4 {
+            color: #0066cc;
+            margin-bottom: 1rem;
+        }
+       
+        .roi-card .metric-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+       
+        /* Financial Impact Box - Enhanced with Better Contrast */
+        .financial-impact {
+            background: #2d5a3d;
+            color: white;
+            padding: 0;
+            border-radius: 12px;
+            margin: 2rem 0;
+            overflow: hidden;
+        }
+       
+        .financial-impact > h4 {
+            font-size: 1.5rem;
+            margin-bottom: 0;
+            padding: 2rem 2rem 1rem;
+            text-align: center;
+            background: rgba(0,0,0,0.2);
+        }
+        
+        .financial-impact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            margin-top: 0;
+        }
+        
+        .financial-impact-grid > div:first-child {
+            background: rgba(0,0,0,0.15);
+            padding: 2rem;
+            border-right: 2px solid rgba(255,255,255,0.2);
+        }
+        
+        .financial-impact-grid > div:last-child {
+            background: linear-gradient(135deg, #5a9e6f 0%, #4a8c5f 100%);
+            padding: 2rem;
+        }
+        
+        .financial-impact-grid h5 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #ffd700;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+       
+        .financial-impact .metric {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            align-items: center;
+        }
+        
+        .financial-impact .metric span {
+            flex: 1;
+            font-size: 0.95rem;
+        }
+        
+        .financial-impact .metric strong {
+            flex: 0 0 auto;
+            text-align: right;
+            font-size: 1rem;
+        }
+       
+        /* Altasciences Section */
+        .story-section {
+            background: white;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+       
+        .quote-prominent {
+            background: #f0f4ff;
+            padding: 2rem;
+            border-left: 6px solid #0066cc;
+            margin: 2rem 0;
+            font-size: 1.2rem;
+            font-style: italic;
+            color: #2c3e50;
+        }
+       
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+       
+        .metric-card {
+            text-align: center;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+       
+        .metric-card .number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #0066cc;
+        }
+       
+        .metric-card .label {
+            color: #5a6c7d;
+            margin-top: 0.5rem;
+        }
+       
+        /* Screenshots Section */
+        .screenshot-container {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+       
+        .screenshot-placeholder {
+            background: white;
+            border: 2px dashed #cbd5e0;
+            padding: 4rem 2rem;
+            border-radius: 8px;
+            color: #5a6c7d;
+            margin: 1rem 0;
+        }
+       
+        /* Pain Points */
+        .pain-points-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+       
+        .pain-box {
+            background: white;
+            padding: 2rem;
+            border-left: 4px solid #dc3545;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+       
+        .pain-box h4 {
+            color: #dc3545;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+       
+        .pain-box p {
+            color: #5a6c7d;
+            line-height: 1.7;
+        }
+        
+        /* Section Title Fix */
+        .section-center-text {
+            text-align: center;
+            margin-top: 2rem;
+        }
+        
+        .section-center-text h3 {
+            color: #5a9e6f;
+            font-size: 1.8rem;
+        }
+        
+        .section-center-text p {
+            font-size: 1.2rem;
+            margin-top: 1rem;
+        }
+       
+        /* Implementation Timeline */
+        .timeline-container {
+            background: white;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin: 2rem 0;
+        }
+        
+        .timeline-container h3 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #5a9e6f;
+        }
+       
+        .timeline-week {
+            border-left: 4px solid #5a9e6f;
+            padding-left: 2rem;
+            margin: 2rem 0;
+            position: relative;
+        }
+       
+        .timeline-week:before {
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            background: #5a9e6f;
+            border-radius: 50%;
+        }
+       
+        .timeline-week h4 {
+            color: #5a9e6f;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+       
+        .timeline-week ul {
+            list-style: none;
+            padding: 0;
+            color: #5a6c7d;
+        }
+       
+        .timeline-week li {
+            padding: 0.25rem 0;
+        }
+       
+        /* Comparison Table - Enhanced with Mobile Support */
+        .comparison-table-wrapper {
+            overflow-x: auto;
+            margin: 2rem 0;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            min-width: 600px;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+       
+        .comparison-table thead {
+            background: #0066cc;
+            color: white;
+        }
+       
+        .comparison-table th {
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+       
+        .comparison-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+       
+        .comparison-table tbody tr:hover {
+            background: #f8f9fa;
+        }
+       
+        .comparison-table td:last-child {
+            background: #f0f8ff;
+            font-weight: 600;
+        }
+       
+        /* Trust Grid */
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+       
+        .trust-grid .trust-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: block;
+        }
+       
+        .trust-grid .trust-item .number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #0066cc;
+        }
+       
+        .trust-grid .trust-item .label {
+            color: #5a6c7d;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+       
+        /* Roadmap Timeline - Improved */
+        .roadmap {
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch;
+            margin: 3rem 0;
+            position: relative;
+            gap: 1rem;
+        }
+       
+        .roadmap:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 10%;
+            right: 10%;
+            height: 2px;
+            background: #e5e7eb;
+            z-index: 0;
+        }
+       
+        .roadmap-item {
+            background: white;
+            padding: 1.5rem 1rem;
+            border: 2px solid #0066cc;
+            border-radius: 8px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 120px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+       
+        .roadmap-item.active {
+            background: #5a9e6f;
+            color: white;
+            border-color: #5a9e6f;
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+       
+        .roadmap-item h5 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+       
+        .roadmap-item p {
+            font-size: 0.85rem;
+            margin: 0;
+            line-height: 1.3;
+        }
+       
+        /* FAQ Section */
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+       
+        .faq-item {
+            background: white;
+            margin: 1rem 0;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+       
+        .faq-item h4 {
+            color: #5a9e6f;
+            margin-bottom: 1rem;
+        }
+       
+        .faq-item p {
+            color: #5a6c7d;
+            line-height: 1.7;
+        }
+       
+        /* Reassurance Boxes */
+        .reassurance-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+       
+        .reassurance-box {
+            text-align: center;
+            padding: 2rem 1rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+       
+        .reassurance-box:hover {
+            transform: translateY(-5px);
+        }
+       
+        .reassurance-box h4 {
+            color: #5a9e6f;
+            margin-bottom: 1rem;
+        }
+       
+        .reassurance-box p {
+            color: #5a6c7d;
+            font-size: 0.95rem;
+        }
+       
+        /* Final CTA Section */
+        .final-cta {
+            background: linear-gradient(135deg, #4a7c59 0%, #2d5a3d 100%);
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+        }
+       
+        .final-cta h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+       
+        .final-cta .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 3rem;
+            opacity: 0.95;
+        }
+       
+        /* CTA Cards */
+        .cta-options {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            align-items: stretch;
+        }
+       
+        .cta-card {
+            background: white;
+            color: #2c3e50;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            min-height: 400px;
+        }
+       
+        .cta-card.primary {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+       
+        .cta-card h3 {
+            color: #5a9e6f;
+            margin-bottom: 1rem;
+        }
+       
+        .cta-card p {
+            margin-bottom: 1rem;
+        }
+       
+        .cta-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+            text-align: left;
+            flex-grow: 1;
+        }
+       
+        .cta-card li {
+            padding: 0.25rem 0;
+        }
+       
+        .cta-card .btn-primary {
+            margin-top: auto;
+            width: 100%;
+        }
+       
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+       
+        .footer-trust {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+       
+        .footer-trust span {
+            padding: 0.5rem 1rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 20px;
+        }
+       
+        footer .btn-primary {
+            background: white;
+            color: #5a9e6f;
+        }
+       
+        footer .btn-primary:hover {
+            background: #f8f8f8;
+        }
+       
+        /* Hover states only for devices with hover capability */
+        @media (hover: hover) {
+            .btn-primary:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            }
+           
+            .column-card:hover {
+                transform: translateY(-5px);
+            }
+           
+            .pricing-card:hover {
+                transform: translateY(-5px);
+            }
+           
+            .reassurance-box:hover {
+                transform: translateY(-5px);
+            }
+        }
+       
+        /* Mobile Styles */
+        @media screen and (max-width: 750px) {
+            .desktop-only { display: none; }
+            .mobile-only { display: block; }
+           
+            .container {
+                padding: 0 15px;
+            }
+           
+            .section {
+                padding: 2rem 0;
+            }
+           
+            /* Mobile Navigation - Enhanced */
+            .nav-links {
+                display: none;
+            }
+            
+            .nav-links.mobile-active a.mobile-only {
+                display: block !important;
+            }
+            
+            .mobile-label {
+                display: inline !important;
+            }
+           
+            .mobile-menu-toggle {
+                display: block;
+            }
+           
+            .nav-cta {
+                font-size: 0.9rem;
+                padding: 0.6rem 1rem;
+            }
+           
+            /* Hero Mobile */
+            .hero {
+                padding: 3rem 0 2rem;
+            }
+           
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+           
+            .hero .subheadline {
+                font-size: 1rem;
+            }
+           
+            .trust-bar {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+           
+            .trust-item {
+                width: 100%;
+                justify-content: center;
+                white-space: normal;
+                text-align: center;
+            }
+           
+            .hero-buttons {
+                flex-direction: column;
+                width: 100%;
+                padding: 0 1rem;
+            }
+           
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                justify-content: center;
+                padding: 1.25rem 2rem;
+                font-size: 1.125rem;
+            }
+           
+            /* Section Headers Mobile */
+            .section-title {
+                font-size: 1.75rem;
+            }
+           
+            .section-subtitle {
+                font-size: 1rem;
+            }
+           
+            /* Two Columns Mobile */
+            .two-columns {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+           
+            /* Pricing Mobile */
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+           
+            .pricing-card {
+                padding: 1.5rem;
+            }
+           
+            /* ROI Table Mobile */
+            .roi-table {
+                display: none;
+            }
+           
+            .roi-mobile-cards {
+                display: block;
+            }
+           
+            /* Financial Impact Mobile */
+            .financial-impact {
+                padding: 0;
+            }
+           
+            .financial-impact > h4 {
+                font-size: 1.25rem;
+                padding: 1.5rem;
+            }
+            
+            .financial-impact-grid {
+                grid-template-columns: 1fr !important;
+                gap: 0;
+            }
+            
+            .financial-impact-grid > div:first-child {
+                border-right: none;
+                border-bottom: 2px solid rgba(255,255,255,0.2);
+                padding: 1.5rem;
+            }
+            
+            .financial-impact-grid > div:last-child {
+                padding: 1.5rem;
+            }
+            
+            .financial-impact-grid h5 {
+                font-size: 1.1rem;
+            }
+           
+            .financial-impact .metric {
+                flex-direction: column;
+                gap: 0.5rem;
+                text-align: left;
+                align-items: flex-start;
+            }
+            
+            .financial-impact .metric strong {
+                text-align: left;
+            }
+           
+            /* Metrics Grid Mobile */
+            .metrics-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+           
+            /* Pain Points Mobile */
+            .pain-points-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+           
+            /* Timeline Mobile */
+            .timeline-container {
+                padding: 1.5rem;
+            }
+           
+            /* Story Section Mobile */
+            .story-section {
+                padding: 1.5rem;
+            }
+           
+            .quote-prominent {
+                padding: 1rem;
+                font-size: 1rem;
+            }
+           
+            /* Comparison Table Mobile - Scrollable */
+            .comparison-table-wrapper {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                margin: 0 -15px;
+                padding: 0 15px;
+            }
+            
+            .comparison-table-wrapper:after {
+                content: '← Scroll →';
+                display: block;
+                text-align: center;
+                color: #5a6c7d;
+                font-size: 0.85rem;
+                margin-top: 0.5rem;
+            }
+           
+            .comparison-table {
+                font-size: 0.8rem;
+            }
+           
+            .comparison-table th,
+            .comparison-table td {
+                padding: 0.5rem;
+                font-size: 0.75rem;
+                white-space: nowrap;
+            }
+            
+            .comparison-table td:first-child {
+                white-space: normal;
+                min-width: 100px;
+            }
+           
+            /* Trust Grid Mobile */
+            .trust-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+           
+            .reassurance-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+            
+            /* Roadmap Mobile */
+            .roadmap {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: stretch;
+            }
+            
+            .roadmap:before {
+                display: none;
+            }
+            
+            .roadmap-item {
+                width: 100%;
+                margin: 0;
+                min-height: auto;
+                padding: 1rem;
+            }
+            
+            .roadmap-item.active {
+                transform: none;
+            }
+           
+            .cta-options {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+           
+            .cta-card.primary {
+                transform: none;
+            }
+           
+            .final-cta h2 {
+                font-size: 2rem;
+            }
+           
+            .final-cta .subtitle {
+                font-size: 1.1rem;
+            }
+        }
+       
+        /* Tablet Styles */
+        @media screen and (min-width: 751px) and (max-width: 1000px) {
+            .container {
+                padding: 0 30px;
+            }
+           
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+           
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+           
+            .two-columns {
+                gap: 2rem;
+            }
+           
+            .pain-points-grid {
+                grid-template-columns: 1fr;
+            }
+           
+            .metrics-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+           
+            .financial-impact .metric {
+                font-size: 0.95rem;
+            }
+           
+            .trust-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+           
+            .reassurance-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+           
+            .cta-options {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+           
+            .cta-card.primary {
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="nav-links">
+                <strong>Evidence Matters</strong>
+                <a href="#pricing">Pricing<span class="mobile-label"> (40% Off)</span></a>
+                <a href="#roi">ROI Impact</a>
+                <a href="#altasciences">Altasciences<span class="mobile-label"> Success</span></a>
+                <a href="#demo">See Demo</a>
+                <a href="#implementation">Implementation<span class="mobile-label"> Timeline</span></a>
+                <a href="#resources">FAQ</a>
+                <a href="#about" class="mobile-only">About Evidence Matters</a>
+            </div>
+            <button class="mobile-menu-toggle">☰</button>
+            <a href="https://calendly.com/evidencematters/executive-briefing" target="_blank" class="nav-cta">Schedule Executive Briefing →</a>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Cut Protocol & CSR Development Time <span style="color: #ffd700;">70-90%</span><br>While <span style="color: #ffd700;">Eliminating</span> Documentation Errors</h1>
+            <p class="subheadline">
+                RegulatoryFlow transforms regulatory documentation with AI-powered Text Engineering that delivers near-zero-errors
+            </p>
+            <div style="margin: 2.5rem 0;">
+                <p style="text-align: left; max-width: 750px; margin: 0 auto; line-height: 2.4; font-size: 1.35rem;">
+                    <strong>• Start today with TFL automation:</strong><br>
+                    <span style="color: #ffd700; margin-left: 1.5rem; display: inline-block; margin-top: 0.5rem; font-size: 1.3rem; font-weight: 600;">2-20x faster, near-zero errors</span><br style="margin-bottom: 1rem;">
+                    <br>
+                    <strong>• Scale tomorrow with full Protocol and CSR creation:</strong><br>
+                    <span style="color: #ffd700; margin-left: 1.5rem; display: inline-block; margin-top: 0.5rem; font-size: 1.3rem; font-weight: 600;">70hrs manual protocols to 5-8hrs; 100hrs CSRs to 8-12hrs</span>
+                </p>
+            </div>
+           
+            <div class="trust-bar">
+                <div class="trust-item">
+                    <strong>In Strategic Partnership with:</strong> Altasciences
+                </div>
+                <div class="trust-item">25 Years of Clinical Data Science Excellence</div>
+                <div class="trust-item">Patent-Pending Technology</div>
+                <div class="trust-item">Pay-Per-Study Pricing</div>
+                <div class="trust-item">Unlimited Users</div>
+            </div>
+           
+            <div class="hero-buttons">
+                <a href="#altasciences" class="btn-primary">See How Altasciences is Transforming Regulatory Operations</a>
+                <a href="#roi" class="btn-secondary">View Pricing & ROI Table</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Section 1: Dual-Path Value Proposition -->
+    <section class="section" id="solutions">
+        <div class="container">
+            <h2 class="section-title">Your Journey to Regulatory Excellence Starts Where You Need It Most</h2>
+           
+            <div class="two-columns">
+                <div class="column-card">
+                    <h4>Step 1: TFL Module</h4>
+                    <h5>Start Seeing ROI in Weeks</h5>
+                    <ul>
+                        <li><strong>2-20x faster</strong> TFL-to-Word processing (30-60 min manual/table to 2-5 min)</li>
+                        <li><strong>Near-zero errors</strong> in table transfers (vs. 20% manual rework)</li>
+                        <li><strong>50%+ time reduction</strong> for medical writers (saving $150/hr labor)</li>
+                        <li><strong>Seamless Word integration</strong> - no training needed</li>
+                        <li><strong>Affects ~33% of all tables</strong> in regulatory documents</li>
+                        <li><strong>Unlimited users</strong> across your organization</li>
+                    </ul>
+                    <div class="quote-box">
+                        "In testing, RegulatoryFlow eliminated table transfer errors that typically affect one-third of tables in regulatory documents, cut processing time by more than 50% and achieved near-zero errors in complex adaptive Phase I studies."
+                    </div>
+                    <a href="#pricing" class="btn-primary">Start with TFL Module →</a>
+                </div>
+               
+                <div class="column-card">
+                    <h4>Step 2: Add Full Suite</h4>
+                    <h5>Transform Your Entire Operation</h5>
+                    <ul>
+                        <li><strong>70-90% faster protocols</strong> (70hrs manual to 5-8hrs expert)</li>
+                        <li><strong>80-90% faster</strong> CSR creation (100hrs manual to 8-12hrs)</li>
+                        <li><strong>2-3x capacity increase</strong> without adding headcount ($150/hr labor savings)</li>
+                        <li><strong>End-to-end workflow</strong> automation with empathic layers (pre-fills, Gantt timelines)</li>
+                        <li><strong>Modular deployment</strong> - adopt at your pace</li>
+                        <li><strong>Unlimited users</strong> - no per-seat costs</li>
+                    </ul>
+                    <div class="quote-box">
+                        "With Text Engineering, we're moving beyond automation into a new era of precision and consistency, with near-zero errors and massive KPI gains. The impact on regulatory documentation — from timelines to accuracy — is transformative."   
+                    </div>
+                    <a href="#roadmap" class="btn-primary">Explore Full Roadmap →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Section 2: Transparent Pricing -->
+    <section class="section section-alt" id="pricing">
+        <div class="container">
+            <h2 class="section-title">Simple, Transparent Pricing That Transforms Your Economics</h2>
+            <p class="section-subtitle">
+                <strong>Limited-Time Launch Pricing: Save 40% in 2025</strong><br>
+                No hidden costs. No monthly fees. No per-user charges. Just pay for what you use.<br>
+                Revolutionary <strong>pay-per-study pricing</strong> with <strong>unlimited users</strong>. Pre-purchase study bundles and lock in 2025 rates.
+            </p>
+           
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h4>TFL Module</h4>
+                    <div class="availability" style="color: #dc3545; font-weight: 700;">FREE 30-Day Pilot</div>
+                    <div class="price">
+                        <span style="color: #5a9e6f; font-size: 2rem;">$297</span>
+                        <span style="text-decoration: line-through; color: #999; font-size: 1.2rem;">$500</span>
+                        <span style="font-size: 1rem;">per study</span>
+                    </div>
+                    <div style="background: #ffd700; color: #2c3e50; padding: 0.5rem; margin: 1rem -2rem; font-weight: 600;">
+                        2025 Launch Price - 40% OFF
+                    </div>
+                    <ul>
+                        <li>Process unlimited TFLs per study</li>
+                        <li>2-20x faster processing</li>
+                        <li>Near-zero errors</li>
+                        <li>Regulatory compliant</li>
+                        <li>Microsoft Word integration</li>
+                        <li>Unlimited users in your org</li>
+                        <li>Unlimited revisions</li>
+                        <li>Any simple or complex TFL</li>
+                        <li>Full support included</li>
+                    </ul>
+                    <div class="minimum">
+                        <strong>Free pilot: $1,500 value</strong><br>
+                        <span style="font-size: 0.9rem;">Then minimum 20 study bundle</span>
+                    </div>
+                    <a href="https://www.evidencematters.com/get-started" target="_blank" class="btn-primary">Start Free 30-Day Pilot →</a>
+                </div>
+               
+                <div class="pricing-card">
+                    <h4>Full Suite (Protocol + CSR)</h4>
+                    <div class="availability" style="color: #dc3545; font-weight: 700;">FREE First Study</div>
+                    <div class="price">
+                        <span style="color: #5a9e6f; font-size: 2rem;">$A,000</span>
+                        <span style="text-decoration: line-through; color: #999; font-size: 1.2rem;">$BB,000</span>
+                        <span style="font-size: 1rem;">per study</span>
+                    </div>
+                    <div style="background: #ffd700; color: #2c3e50; padding: 0.5rem; margin: 1rem -2rem; font-weight: 600;">
+                        2025 Launch Price - 40% OFF
+                    </div>
+                    <ul>
+                        <li>Complete Protocol and CSR generation</li>
+                        <li>70-90% faster Protocols (70hrs → 5-8hrs)</li>
+                        <li>80-90% faster CSRs (100hrs → 8-12hrs)</li>
+                        <li>Regulatory compliant</li>
+                        <li>Microsoft Word integration</li>
+                    
+                        <li>Unlimited users in your org</li>
+                        <li>Unlimited revisions</li>
+                        <li>Customized to your SOPs</li>
+                        <li>Full support included</li>
+                    </ul>
+                    <div class="minimum">
+                        <strong>Free pilot: $A,000 value</strong><br>
+                        <span style="font-size: 0.9rem;">Q3 pilot after TFL success</span>
+                    </div>
+                    <a href="https://www.evidencematters.com/get-started" target="_blank" class="btn-primary">Reserve Q3 Pilot Spot →</a>
+                </div>
+            </div>
+           
+            <div class="comparison-box">
+                <h4>Why Lock In 2025 Pricing Now</h4>
+                <ul style="list-style: none; padding: 0;">
+                    <br>
+                    <li><strong>Traditional Enterprise Solutions:</strong> $500K-2M annually + per-user + implementation + training + maintenance</li>
+                    <br>
+                    <li><strong>RegulatoryFlow 2026 Pricing per Study:</strong> $500/study (TFL Module); $BB,000/study (full suite)</li>
+                    <br>
+                    <li><strong>RegulatoryFlow 2025 Pricing per Study:</strong> $297/study (TFL Module); $A,000/study (full suite)</li> 
+                    <br>
+                    <li>     <span style="color: #dc3545; font-weight: 700;">→ 40% savings, locked in with bundle purchase</span></li>
+                </ul>
+            </div>
+           
+            <div class="pilot-box">
+                <h4>ZERO-RISK PILOT PROGRAMS</h4>
+                <br>
+                <p><strong>TFL Module:</strong> 30-day pilot, up to 3 studies ($1,500 value)<br>
+                <strong>Full Suite:</strong> First complete study free ($A,000 value)<br>
+                No credit card required. Keep all outputs.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Section 3: ROI at a Glance -->
+    <section class="section" id="roi">
+        <div class="container">
+            <h2 class="section-title">Your Return on Investment - Clear and Quantifiable</h2>
+           
+            <!-- Desktop Table -->
+            <div class="desktop-only">
+                <table class="roi-table">
+                    <thead>
+                        <tr>
+                            <th>Metric</th>
+                            <th>Current State</th>
+                            <th>With TFL Module (Now)</th>
+                            <th>With Full Suite (Q4 2025)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>TFL Processing Time</strong></td>
+                            <td>30-60 min per table</td>
+                            <td>2-5 min per table (2-20x faster)</td>
+                            <td>Human-curated automation</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Error Rate in Tables</strong></td>
+                            <td>20% require rework</td>
+                            <td>Near-zero</td>
+                            <td>Near-zero</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Protocol Development</strong></td>
+                            <td>70hrs manual</td>
+                            <td>—</td>
+                            <td>5-8hrs expert</td>
+                        </tr>
+                        <tr>
+                            <td><strong>CSR Creation Time (Writer Hours)</strong></td>
+                            <td>100hrs manual</td>
+                            <td>50-70hrs (with TFL assist)</td>
+                            <td>8-12hrs expert</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cost per Protocol (at $150/hr labor)</strong></td>
+                            <td>$10,500</td>
+                            <td>—</td>
+                            <td>$750-1,200</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cost per CSR (at $150/hr labor)</strong></td>
+                            <td>$15,000</td>
+                            <td>$7,500-10,500</td>
+                            <td>$1,200-1,800</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Regulatory Queries (40% of studies)</strong></td>
+                            <td>40% of studies</td>
+                            <td>~35% projected</td>
+                            <td>&lt;15% projected</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cost per Query</strong></td>
+                            <td>$100,000+</td>
+                            <td>$85,000</td>
+                            <td>$25,000</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Amendment Costs ($100k each)</strong></td>
+                            <td>$100,000+ per amendment</td>
+                            <td>5% avoided</td>
+                            <td>90% avoided</td>
+                        </tr>
+                        <tr>
+                            <td><strong>FTE Productivity</strong></td>
+                            <td>Baseline</td>
+                            <td>+100% on TFL tasks</td>
+                            <td>+200-300% overall</td>
+                        </tr>
+                        <tr>
+                            <td><strong>User Licenses Needed</strong></td>
+                            <td>$X per user/year</td>
+                            <td>Unlimited included</td>
+                            <td>Unlimited included</td>
+                        </tr>
+                        <tr>
+                            <td><strong>ROI Timeline</strong></td>
+                            <td>—</td>
+                            <td>2-4 weeks</td>
+                            <td>4-6 weeks</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+           
+            <!-- Mobile Cards -->
+            <div class="mobile-only roi-mobile-cards">
+                <div class="roi-card">
+                    <h4>TFL Processing</h4>
+                    <div class="metric-row">
+                        <span>Current:</span>
+                        <strong>30-60 min/table</strong>
+                    </div>
+                    <div class="metric-row">
+                        <span>With TFL Module:</span>
+                        <strong>2-5 min/table</strong>
+                    </div>
+                    <div class="metric-row">
+                        <span>With Full Suite:</span>
+                        <strong>Human-curated automation</strong>
+                    </div>
+                </div>
+               
+                <div class="roi-card">
+                    <h4>Error Rates</h4>
+                    <div class="metric-row">
+                        <span>Current:</span>
+                        <strong>20% rework</strong>
+                    </div>
+                    <div class="metric-row">
+                        <span>With RegulatoryFlow:</span>
+                        <strong>Near-zero</strong>
+                    </div>
+                </div>
+               
+                <div class="roi-card">
+                    <h4>Time Savings</h4>
+                    <div class="metric-row">
+                        <span>Protocol Development:</span>
+                        <strong>70-90% faster</strong>
+                    </div>
+                    <div class="metric-row">
+                        <span>CSR Creation:</span>
+                        <strong>80-90% faster</strong>
+                    </div>
+                    <div class="metric-row">
+                        <span>ROI Timeline:</span>
+                        <strong>2-4 weeks</strong>
+                    </div>
+                </div>
+               
+                <div class="roi-card">
+                    <h4>Cost Impact</h4>
+                    <div class="metric-row">
+                        <span>Regulatory Queries:</span>
+                        <strong>$100k+ each</strong>
+                    </div>
+                    <div class="metric-row">
+                        <span>Query Reduction:</span>
+                        <strong>40% → &lt;15%</strong>
+                    </div>
+                    <div class="metric-row">
+                        <span>User Licenses:</span>
+                        <strong>Unlimited included</strong>
+                    </div>
+                </div>
+            </div>
+           
+            <p style="font-style: italic; color: #5a6c7d; margin-top: 1rem;">Savings based on $150/hr labor; amendments $1-5M each avoided 40-90%.</p>
+           
+            <div class="financial-impact">
+                <h4>For CROs Running 20/50/100 Studies/Year:</h4>
+               
+                <div class="financial-impact-grid">
+                    <div>
+                        <h5>Current State Costs (20 Studies):</h5>
+                        <div class="metric">
+                            <span>Protocol development:</span>
+                            <strong>$210k</strong>
+                        </div>
+                        <div class="metric">
+                            <span>CSR creation:</span>
+                            <strong>$300k</strong>
+                        </div>
+                        <div class="metric">
+                            <span>Queries/amendments (8 studies):</span>
+                            <strong>$800k (CRO) - 40M (pharma)</strong>
+                        </div>
+                        <div class="metric" style="border-top: 2px solid white; margin-top: 1rem; padding-top: 1rem;">
+                            <span><strong>Total:</strong></span>
+                            <strong>$1.31M-40.51M</strong>
+                        </div>
+                    </div>
+                   
+                    <div>
+                        <h5>With RegulatoryFlow (20 Studies):</h5>
+                        <div class="metric">
+                            <span>70-90% reduction in documentation costs</span>
+                            <strong>✓</strong>
+                        </div>
+                        <div class="metric">
+                            <span>75-90% reduction in query/amendment costs</span>
+                            <strong>✓</strong>
+                        </div>
+                        <div class="metric" style="border-top: 2px solid white; margin-top: 1rem; padding-top: 1rem;">
+                            <span><strong>Savings:</strong></span>
+                            <strong>$440k labor + $7M risks</strong>
+                        </div>
+                        <div class="metric">
+                            <span><strong>Investment payback:</strong></span>
+                            <strong>First 2-3 studies</strong>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="financial-impact-grid">
+                    <div>
+                        <h5>Current State Costs (50 Studies):</h5>
+                        <div class="metric">
+                            <span>Protocol development:</span>
+                            <strong>$525k</strong>
+                        </div>
+                        <div class="metric">
+                            <span>CSR creation:</span>
+                            <strong>$750k</strong>
+                        </div>
+                        <div class="metric">
+                            <span>Queries/amendments (20 studies):</span>
+                            <strong>$2M (CRO) - 100M (pharma)</strong>
+                        </div>
+                        <div class="metric" style="border-top: 2px solid white; margin-top: 1rem; padding-top: 1rem;">
+                            <span><strong>Total:</strong></span>
+                            <strong>$3.28M-101.28M</strong>
+                        </div>
+                    </div>
+                   
+                    <div>
+                        <h5>With RegulatoryFlow (50 Studies):</h5>
+                        <div class="metric">
+                            <span>70-90% reduction in documentation costs</span>
+                            <strong>✓</strong>
+                        </div>
+                        <div class="metric">
+                            <span>75-90% reduction in query/amendment costs</span>
+                            <strong>✓</strong>
+                        </div>
+                        <div class="metric" style="border-top: 2px solid white; margin-top: 1rem; padding-top: 1rem;">
+                            <span><strong>Savings:</strong></span>
+                            <strong>$1.1M labor + $17.5M risks</strong>
+                        </div>
+                        <div class="metric">
+                            <span><strong>Investment payback:</strong></span>
+                            <strong>First 2-3 studies</strong>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="financial-impact-grid">
+                    <div>
+                        <h5>Current State Costs (100 Studies):</h5>
+                        <div class="metric">
+                            <span>Protocol development:</span>
+                            <strong>$1.05M</strong>
+                        </div>
+                        <div class="metric">
+                            <span>CSR creation:</span>
+                            <strong>$1.5M</strong>
+                        </div>
+                        <div class="metric">
+                            <span>Queries/amendments (40 studies):</span>
+                            <strong>$4M (CRO) - 200M (pharma)</strong>
+                        </div>
+                        <div class="metric" style="border-top: 2px solid white; margin-top: 1rem; padding-top: 1rem;">
+                            <span><strong>Total:</strong></span>
+                            <strong>$6.55M-202.55M</strong>
+                        </div>
+                    </div>
+                   
+                    <div>
+                        <h5>With RegulatoryFlow (100 Studies):</h5>
+                        <div class="metric">
+                            <span>70-90% reduction in documentation costs</span>
+                            <strong>✓</strong>
+                        </div>
+                        <div class="metric">
+                            <span>75-90% reduction in query/amendment costs</span>
+                            <strong>✓</strong>
+                        </div>
+                        <div class="metric" style="border-top: 2px solid white; margin-top: 1rem; padding-top: 1rem;">
+                            <span><strong>Savings:</strong></span>
+                            <strong>$2.2M labor + $35M risks</strong>
+                        </div>
+                        <div class="metric">
+                            <span><strong>Investment payback:</strong></span>
+                            <strong>First 2-3 studies</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Section 4: The Altasciences Story -->
+    <section class="section section-alt" id="altasciences">
+        <div class="container">
+            <h2 class="section-title">How Altasciences is Pioneering the Future of AI-Driven Regulatory Writing</h2>
+           
+            <div class="story-section">
+                <div class="quote-prominent">
+                    "This collaboration underscores Altasciences' ongoing commitment to leveraging artificial intelligence to drive innovation,
+                    streamline complex processes, and deliver better outcomes for both sponsors and patients."
+                    <div style="margin-top: 1rem; font-style: normal; color: #0066cc;">— Altasciences Leadership</div>
+                </div>
+               
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="number">&gt;70%</div>
+                        <div class="label">Reduction in TFL Processing Time</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="number">Near-zero</div>
+                        <div class="label">Transfer Errors in Testing vs 20% Industry Standard</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="number">Weeks</div>
+                        <div class="label">Not Months for Implementation</div>
+                    </div>
+                </div>
+               
+                <div style="margin-top: 2rem; line-height: 1.8;">
+                    <p>
+                        Altasciences, a fully integrated CRO/CDMO with over 30 years of excellence in early-phase drug development,
+                        chose RegulatoryFlow after rigorous evaluation. They're not just implementing our technology—they're actively
+                        shaping it through real-world training data, user testing, and continuous feedback from their frontline teams.
+                    </p>
+                    <p style="margin-top: 1rem;">
+                        This isn't a vendor relationship. It's a strategic collaboration to redefine what's possible in clinical trial documentation.
+                    </p>
+                </div>
+               
+                <div style="text-align: center; margin-top: 2rem;">
+                    <a href="https://www.evidencematters.com/news/altasciences-partnership" target="_blank" class="btn-primary">Read the Full Announcement →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Section 5: See It In Action -->
+    <section class="section" id="demo">
+        <div class="container">
+            <h2 class="section-title">Works Seamlessly Within Microsoft Word - No New Systems to Learn</h2>
+           
+            <div class="screenshot-container">
+                <h4 style="margin-bottom: 1rem; color: #2c3e50;">TFL Module - Available Now:</h4>
+                <div class="screenshot-placeholder">
+                    [Screenshot: RegulatoryFlow TFL Module interface within Microsoft Word, showing the taskpane and one-click table transfer functionality]
+                </div>
+                <ul style="list-style: none; padding: 0; text-align: left; margin-top: 1rem;">
+                    <li>• Available as a simple Word add-in taskpane</li>
+                    <li>• A few clicks for TFL import and formatting</li>
+                    <li>• Easy update with new source files</li>
+                    <li>• Maintains your existing templates and styles</li>
+                </ul>
+            </div>
+           
+            <div class="screenshot-container">
+                <h4 style="margin-bottom: 1rem; color: #2c3e50;">Protocol & CSR Modules - Pilot in Q3 after TFL</h4>
+                <div class="screenshot-placeholder">
+                    [Screenshot 1: Study Designer interface showing study characteristics input with empathic pre-fills]
+                </div>
+                <div class="screenshot-placeholder">
+                    [Screenshot 2: Document structure specification with automated text and table generation, including Gantt timelines]
+                </div>
+                <ul style="list-style: none; padding: 0; text-align: left; margin-top: 1rem;">
+                    <li>• Intuitive Study Designer for protocol parameters with ontology-driven empathy</li>
+                    <li>• Visual document structure builder with Gantt ties</li>
+                    <li>• Automated content generation with your SOPs</li>
+                    <li>• Direct insertion into Word documents</li>
+                </ul>
+            </div>
+           
+            <div style="background: #f0f8f4; padding: 1.5rem; border-radius: 8px; margin-top: 2rem;">
+                <p><strong>See a Live Demo:</strong> Watch how medical writers save 50-200 hours per CSR with our Word-integrated workflow, achieving near-zero errors.</p>
+                <a href="https://calendly.com/evidencematters/demo" target="_blank" class="btn-primary">Schedule Demo →</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Section 6: The CRO Challenge -->
+    <section class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Built for CROs Facing Mounting Pressure</h2>
+           
+            <div class="pain-points-grid">
+                <div class="pain-box">
+                    <h4>Bid Pressure</h4>
+                    <p>You're losing winnable bids because competitors promise faster timelines you can't match with current processes.</p>
+                </div>
+               
+                <div class="pain-box">
+                    <h4>Margin Erosion</h4>
+                    <p>Documentation rework and amendments eat into already thin margins. One protocol amendment costs $1-5M. Regulatory queries average $100k+ each, affecting 40% of studies.</p>
+                </div>
+               
+                <div class="pain-box">
+                    <h4>Talent Constraints</h4>
+                    <p>You can't find enough qualified medical writers. The ones you have are burned out from repetitive tasks. Per-user licensing makes scaling expensive.</p>
+                </div>
+               
+                <div class="pain-box">
+                    <h4>Quality Demands</h4>
+                    <p>Sponsors expect flawless documentation faster than ever. One error can damage relationships built over years.</p>
+                </div>
+            </div>
+           
+            <div class="section-center-text">
+                <h3>We Built RegulatoryFlow to Solve These Exact Problems</h3>
+                <p>With Unlimited Users and Pay-Per-Study Pricing</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Section 7: Implementation Journey -->
+    <section class="section" id="implementation">
+        <div class="container">
+            <h2 class="section-title">Your Path to Regulatory Excellence in 4 Weeks</h2>
+           
+            <div class="timeline-container">
+                <h3>Implementation Timeline - TFL Module</h3>
+               
+                <div class="timeline-week">
+                    <h4>Week 1: Discovery</h4>
+                    <ul>
+                        <li>• Executive Briefing Call - establish success metrics & validate ROI</li>
+                        <li>• Initial demo & workflow assessment call - senior medical writer / biostats</li>
+                        <li>• Greenlight free pilot</li>
+                    </ul>
+                </div>
+               
+                <div class="timeline-week">
+                    <h4>Week 2: Clearances & Customization</h4>
+                    <ul>
+                        <li>• NDA executed</li>
+                        <li>• IT security review (AWS secure cloud environment)</li>
+                        <li>• SOP alignment and customization</li>
+                    </ul>
+                </div>
+               
+                <div class="timeline-week">
+                    <h4>Week 3: Setup</h4>
+                    <ul>
+                        <li>• Word add-in deployment to pilot team</li>
+                        <li>• Custom styles configuration</li>
+                        <li>• Senior Medical Writers: Hands-on training sessions (2 hours total)</li>
+                    </ul>
+                </div>
+               
+                <div class="timeline-week">
+                    <h4>Week 4: Pilot Production & Validation</h4>
+                    <ul>
+                        <li>• Test runs with your actual TFLs (up to 3 real studies with support)</li>
+                        <li>• Quality validation</li>
+                        <li>• Scale planning discussion</li>
+                    </ul>
+                </div>
+               
+                <div style="background: #f0f8f4; padding: 2rem; border-radius: 8px; margin-top: 2rem;">
+                    <h4 style="color: #5a9e6f; margin-bottom: 1rem;">Why Implementation is So Fast:</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li>✓ No infrastructure changes needed - just a Word add-in</li>
+                        <li>✓ Secure AWS cloud backend - no on-premise installation</li>
+                        <li>✓ Your team already knows Word - 2-hour learning curve</li>
+                        <li>✓ We handle all technical complexity</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Section 8: Differentiation -->
+    <section class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Why RegulatoryFlow vs. Traditional Enterprise Solutions</h2>
+           
+            <div class="comparison-table-wrapper">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Capability</th>
+                            <th>Traditional Enterprise</th>
+                            <th>Generic AI Tools</th>
+                            <th>RegulatoryFlow</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Pricing Model</strong></td>
+                            <td>$500K-2M annual license</td>
+                            <td>Monthly subscriptions</td>
+                            <td>Pay-per-study only</td>
+                        </tr>
+                        <tr>
+                            <td><strong>User Licenses</strong></td>
+                            <td>$X per user per year</td>
+                            <td>Per-seat pricing</td>
+                            <td><strong>Unlimited users included</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Implementation</strong></td>
+                            <td>6-12 months</td>
+                            <td>Variable</td>
+                            <td>2-4 weeks</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Training Required</strong></td>
+                            <td>Extensive (weeks)</td>
+                            <td>Moderate</td>
+                            <td>2 hours (Word-based)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Infrastructure</strong></td>
+                            <td>On-premise or complex cloud</td>
+                            <td>Various</td>
+                            <td>Secure AWS cloud</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Regulatory Compliance</strong></td>
+                            <td>Yes</td>
+                            <td>No</td>
+                            <td>Full (21 CFR Part 11)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Accuracy</strong></td>
+                            <td>Manual QC required</td>
+                            <td>Inconsistent</td>
+                            <td>Near-zero errors</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Customization</strong></td>
+                            <td>Expensive add-ons</td>
+                            <td>Limited</td>
+                            <td>Included</td>
+                        </tr>
+                        <tr>
+                            <td><strong>ROI Timeline</strong></td>
+                            <td>1-2 years</td>
+                            <td>Uncertain</td>
+                            <td>2-4 weeks</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Section 9: Trust & Validation -->
+    <section class="section" id="about">
+        <div class="container">
+            <h2 class="section-title">Built on Evidence Matters' 25-Year Foundation</h2>
+           
+            <div class="trust-grid">
+                <div class="trust-item">
+                    <div class="number">1,000+</div>
+                    <div class="label">Healthcare professionals trained</div>
+                </div>
+                <div class="trust-item">
+                    <div class="number">Stanford</div>
+                    <div class="label">Medicine client</div>
+                </div>
+                <div class="trust-item">
+                    <div class="number">VA</div>
+                    <div class="label">Healthcare System client</div>
+                </div>
+                <div class="trust-item">
+                    <div class="number">Patent</div>
+                    <div class="label">Pending Text Engineering technology</div>
+                </div>
+                <div class="trust-item">
+                    <div class="number">21 CFR</div>
+                    <div class="label">Part 11 Compliant architecture</div>
+                </div>
+                <div class="trust-item">
+                    <div class="number">SOC 2</div>
+                    <div class="label">Security framework</div>
+                </div>
+                <div class="trust-item">
+                    <div class="number">AWS</div>
+                    <div class="label">Secure Cloud Infrastructure</div>
+                </div>
+                <div class="trust-item">
+                    <div class="number">HIPAA</div>
+                    <div class="label">Compliant processes</div>
+                </div>
+            </div>
+           
+            <div style="background: #f0f4ff; padding: 2rem; border-radius: 12px; margin: 2rem 0;">
+                <h3 style="color: #0066cc; margin-bottom: 1rem;">The Science Behind the Speed</h3>
+                <p style="line-height: 1.8;">
+                    Our patent-pending Text Engineering technology doesn't just automate—it understands the intricate relationships
+                    between clinical data and regulatory requirements. This near-deterministic approach means consistent, accurate
+                    outputs every time, all processed in our highly secure AWS cloud environment.
+                </p>
+               
+                <div style="background: white; padding: 1.5rem; border-left: 4px solid #0066cc; margin-top: 1.5rem;">
+                    <em>"With Text Engineering, we're moving beyond automation into a new era of precision and consistency.
+                    The impact on regulatory documentation—from timelines to accuracy—is transformative."</em>
+                    <div style="margin-top: 1rem; color: #0066cc;">— Dr. Ofer Avital, Founder and Director, Evidence Matters</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Section 10: Complete Solution Roadmap -->
+    <section class="section section-alt" id="roadmap">
+        <div class="container">
+            <h2 class="section-title">The Complete RegulatoryFlow Platform Journey</h2>
+           
+            <div class="roadmap">
+                <div class="roadmap-item active">
+                    <h5>NOW</h5>
+                    <p>TFL Module</p>
+                </div>
+                <div class="roadmap-item">
+                    <h5>Q3 2025</h5>
+                    <p>Draft Insights Module<br>(In-text Results)</p>
+                </div>
+                <div class="roadmap-item">
+                    <h5>Q4 2025</h5>
+                    <p>Protocol Creator<br>+ CSR Creator</p>
+                </div>
+                <div class="roadmap-item">
+                    <h5>Q1 2026</h5>
+                    <p>Full regulatory suite<br>+ Submission package</p>
+                </div>
+                <div class="roadmap-item">
+                    <h5>Q2 2026</h5>
+                    <p>Advanced Analytics</p>
+                </div>
+            </div>
+           
+            <div style="background: #5a9e6f; color: white; padding: 2rem; border-radius: 12px; margin-top: 3rem; text-align: center;">
+                <h3 style="margin-bottom: 1rem;">Our Promise:</h3>
+                <ul style="list-style: none; padding: 0; font-size: 1.1rem;">
+                    <li>• Each module works standalone or integrated</li>
+                    <li>• Start anywhere, scale everywhere</li>
+                    <li>• Never forced to buy what you don't need</li>
+                    <li>• Unlimited users always included</li>
+                    <li>• Pay only for what you use</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Section 11: FAQs -->
+    <section class="section" id="resources">
+        <div class="container">
+            <h2 class="section-title">Your Questions Answered</h2>
+           
+            <div class="faq-container">
+                <div class="faq-item">
+                    <h4>Q: Is this real or just marketing?</h4>
+                    <p>TFL module is tested and proven by Altasciences' medical writing and regulatory teams. Your first 3 studies are free to prove it yourself. No credit card required.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h4>Q: How do we know the ROI is real?</h4>
+                    <p>You know your costs: $100K+ per regulatory query, $1-5M per amendment, $150/hr medical writing labor. Our pricing: $297 per TFL study, $A,000 for full suite. Math is simple. First 3 studies free to verify.</p>
+                </div>
+               
+                <div class="faq-item">
+                    <h4>Q: How is this different from ChatGPT or other AI tools?</h4>
+                    <p>AI guesses. Text Engineering guarantees. We use deterministic rules, not probabilistic models. Near-zero errors vs. AI hallucinations. 21 CFR Part 11 compliant vs. consumer tools.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h4>Q: What if our writers resist change?</h4>
+                    <p>It's just Word with superpowers - 2 hour training only. We guarantee 80% adoption in first month, or free TFL use until that bar is met. Writers actually love it because it eliminates their most tedious work.</p>
+                </div>
+               
+                <div class="faq-item">
+                    <h4>Q: What about data security and compliance?</h4>
+                    <p>21 CFR Part 11 compliant, SOC 2 alignment, HIPAA compliant, GDPR ready. AWS secure cloud. Your data never trains our models without explicit permission. NDA executed week 2 of implementation.</p>
+                </div>
+               
+                <div class="faq-item">
+                    <h4>Q: How does this integrate with our existing CTMS/eTMF systems?</h4>
+                    <p>Works within Word. Exports to any system accepting Word documents. No replacement, no disruption, just enhancement. API integrations on 2026 roadmap.</p>
+                </div>
+               
+                <div class="faq-item">
+                    <h4>Q: Can we start small?</h4>
+                    <p>Yes. Start with one therapeutic area, one team, or even one study type. Unlimited users included regardless. Most clients expand after seeing first study results.</p>
+                </div>
+               
+                <div class="faq-item">
+                    <h4>Q: What if we wait until Q4 for the full suite?</h4>
+                    <p>Every month waiting: 10-100 more tables with errors, 100+ wasted hours, potential delays costing $100K+ per query. Competitors gaining efficiency advantage. Missing 40% launch discount (prices increase to $500/TFL and $BB,000/suite in 2026). Lock in 2025 pricing with bundle purchase now.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Section 12: Implementation Assurance -->
+    <section class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">We Make Adoption Painless</h2>
+           
+            <div class="reassurance-grid">
+                <div class="reassurance-box">
+                    <h4>Rapid Deployment</h4>
+                    <p>2-4 weeks to full production. Just deploy our Word add-in. Your secure AWS cloud backend is ready.</p>
+                </div>
+               
+                <div class="reassurance-box">
+                    <h4>2 Hour Training</h4>
+                    <p>Works within Microsoft Word. If your team can use Word, they can master RegulatoryFlow in just 2 hours.</p>
+                </div>
+               
+                <div class="reassurance-box">
+                    <h4>Proven Success Model</h4>
+                    <p>Dedicated success manager. Weekly optimization calls. Continuous improvement based on your feedback.</p>
+                </div>
+               
+                <div class="reassurance-box">
+                    <h4>Risk-Free Pilot</h4>
+                    <p>Test with 3 real TFL studies. See real results with your data. Then decide.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Section 13: Final CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>Ready to Lead Your CRO's Transformation?</h2>
+            <p class="subtitle">Join Altasciences in pioneering the future of regulatory documentation. Start with quick wins, scale to transformation.</p>
+           
+            <div class="cta-options">
+                <div class="cta-card primary">
+                    <h3>Schedule Your Briefing</h3>
+                    <p><strong>30 minutes with our founder and CRO solutions team</strong></p>
+                    <ul>
+                        <li>• See TFL module live demo</li>
+                        <li>• Review your workflows</li>
+                        <li>• Get customized ROIs</li>
+                        <li>• Discuss pilot program options</li>
+                    </ul>
+                    <a href="https://calendly.com/evidencematters/executive-briefing" target="_blank" class="btn-primary">Schedule Briefing →</a>
+                </div>
+               
+                <div class="cta-card">
+                    <h3>Start Free TFL Pilot</h3>
+                    <p><strong>Test with 3 of your most complex, real studies</strong></p>
+                    <ul>
+                        <li>• Up to 3 studies ($1500 value)</li>
+                        <li>• Full support included</li>
+                        <li>• No credit card required</li>
+                        <li>• Keep all outputs</li>
+                    </ul>
+                    <a href="https://www.evidencematters.com/get-started" target="_blank" class="btn-primary">Begin Free Pilot →</a>
+                </div>
+               
+                <div class="cta-card">
+                    <h3>Get TFL Module Overview</h3>
+                    <p><strong>Get detailed product information</strong></p>
+                    <ul>
+                        <li>• Complete feature overview</li>
+                        <li>• Implementation guide</li>
+                        <li>• ROI calculation framework</li>
+                        <li>• Case study insights</li>
+                    </ul>
+                    <a href="/assets/tfl-module-brochure.pdf" target="_blank" class="btn-outline">View TFL Module Brochure (PDF) →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-trust">
+                <span>21 CFR Part 11</span>
+                <span>GDPR</span>
+                <span>SOC 2</span>
+                <span>HIPAA</span>
+                <span>AWS Secure Cloud</span>
+            </div>
+           
+            <div style="margin: 2rem 0;">
+                <h3 style="margin-bottom: 1rem;">Ready to Transform Your Regulatory Operations?</h3>
+                <a href="https://www.evidencematters.com/get-started" target="_blank" class="btn-primary">Submit Inquiry Form →</a>
+            </div>
+           
+            <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.2);">
+                <p><strong>Evidence Matters</strong> - 25 Years of Clinical Trial Data Science Excellence</p>
+                <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">
+                    Helping bring life-saving medicines to patients faster through AI-powered regulatory documentation.
+                </p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Mobile Menu JavaScript - Fixed -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var toggle = document.querySelector('.mobile-menu-toggle');
+        var nav = document.querySelector('.nav-links');
+        
+        if(toggle && nav) {
+            toggle.addEventListener('click', function() {
+                if(nav.classList.contains('mobile-active')) {
+                    nav.classList.remove('mobile-active');
+                    nav.style.display = 'none';
+                    toggle.innerHTML = '☰';
+                } else {
+                    nav.classList.add('mobile-active');
+                    nav.style.display = 'block';
+                    toggle.innerHTML = '✕';
+                }
+            });
+            
+            // Close menu when clicking a link on mobile
+            var links = nav.querySelectorAll('a[href^="#"]');
+            links.forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    if(window.innerWidth <= 750) {
+                        nav.classList.remove('mobile-active');
+                        nav.style.display = 'none';
+                        toggle.innerHTML = '☰';
+                    }
+                    
+                    // Smooth scrolling
+                    e.preventDefault();
+                    var targetId = this.getAttribute('href');
+                    var target = document.querySelector(targetId);
+                    if(target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        }
+        
+        // Add smooth scrolling to all anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                var target = document.querySelector(this.getAttribute('href'));
+                if(target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    });
+    </script>
+</body>
+</html>
